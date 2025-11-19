@@ -92,6 +92,7 @@ export default function AddMedicineScreen({navigation, route}: Props) {
         ],
       );
     } catch (error) {
+      console.error('약 저장 오류:', error);
       Alert.alert('오류', '저장 중 오류가 발생했습니다');
     }
   };

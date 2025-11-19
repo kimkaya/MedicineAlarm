@@ -1,7 +1,10 @@
 /**
  * Medicine Alarm App
  * @format
- */
+ * 
+ * 오류 수정할려고 클로드까지 깔았는데 jdk버전문제였음 fuck
+ * 
+ * */
 
 import React from 'react';
 import {StatusBar, useColorScheme} from 'react-native';
