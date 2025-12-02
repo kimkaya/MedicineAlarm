@@ -79,8 +79,30 @@ export default function AddMedicineScreen({navigation, route}: Props) {
     };
 
     try {
+      // 먼저 약 정보 저장
       await storageService.saveMedicine(medicine);
-      await notificationService.updateAlarms(medicine);
+      console.log('약 저장 성공:', medicine.name);
+
+      // 알림 설정 (실패해도 약은 저장됨)
+      try {
+        await notificationService.initialize();
+        await notificationService.updateAlarms(medicine);
+        console.log('알림 설정 성공');
+      } catch (notifError) {
+        console.error('알림 설정 오류:', notifError);
+        Alert.alert(
+          '경고',
+          '약은 저장되었지만 알림 설정에 실패했습니다.\n알림 권한을 확인해주세요.',
+          [
+            {
+              text: '확인',
+              onPress: () => navigation.goBack(),
+            },
+          ],
+        );
+        return;
+      }
+
       Alert.alert(
         '성공',
         isEditing ? '약 정보가 수정되었습니다' : '약이 추가되었습니다',
@@ -93,7 +115,7 @@ export default function AddMedicineScreen({navigation, route}: Props) {
       );
     } catch (error) {
       console.error('약 저장 오류:', error);
-      Alert.alert('오류', '저장 중 오류가 발생했습니다');
+      Alert.alert('오류', `저장 중 오류가 발생했습니다:\n${error}`);
     }
   };
 

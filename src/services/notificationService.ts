@@ -7,13 +7,21 @@ import {Medicine} from '../types/Medicine';
 
 export const notificationService = {
   async initialize() {
-    await notifee.requestPermission();
-    await notifee.createChannel({
-      id: 'medicine-alarm',
-      name: 'Medicine Alarms',
-      importance: AndroidImportance.HIGH,
-      sound: 'default',
-    });
+    try {
+      const settings = await notifee.requestPermission();
+      console.log('알림 권한 상태:', settings);
+
+      await notifee.createChannel({
+        id: 'medicine-alarm',
+        name: 'Medicine Alarms',
+        importance: AndroidImportance.HIGH,
+        sound: 'default',
+      });
+      console.log('알림 채널 생성 완료');
+    } catch (error) {
+      console.error('알림 초기화 오류:', error);
+      throw new Error('알림 권한을 설정할 수 없습니다. 설정에서 알림 권한을 허용해주세요.');
+    }
   },
 
   async scheduleAlarms(medicine: Medicine) {
