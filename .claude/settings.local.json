@@ -33,7 +33,14 @@
       "mcp__ide__getDiagnostics",
       "Bash($null)",
       "Bash(git clean:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(npm install:*)",
+      "Bash(\"C:\\Users\\sanik\\Documents\\react-native\\MedicineAlarm\\android\\gradlew.bat\" -p \"C:\\Users\\sanik\\Documents\\react-native\\MedicineAlarm\\android\" clean)",
+      "Bash(Select-Object -First 50)",
+      "Bash(timeout:*)",
+      "Bash(findstr:*)",
+      "Bash(./gradlew.bat clean:*)",
+      "Bash(./gradlew.bat assembleDebug:*)"
     ],
     "deny": [],
     "ask": []
