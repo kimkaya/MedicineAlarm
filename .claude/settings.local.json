@@ -40,7 +40,22 @@
       "Bash(timeout:*)",
       "Bash(findstr:*)",
       "Bash(./gradlew.bat clean:*)",
-      "Bash(./gradlew.bat assembleDebug:*)"
+      "Bash(./gradlew.bat assembleDebug:*)",
+      "Bash(adb devices:*)",
+      "Bash(adb kill-server:*)",
+      "Bash(adb start-server:*)",
+      "Bash(emulator -list-avds:*)",
+      "Bash(where:*)",
+      "Bash(start \"\" \"C:\\Users\\sanik\\AppData\\Local\\Android\\Sdk\\emulator\\emulator.exe\" -avd Medium_Phone_API_36.1 -no-snapshot-load)",
+      "Bash(./android/gradlew.bat:*)",
+      "Bash(watchman watch-del-all:*)",
+      "Bash(npx react-native start)",
+      "Bash(adb shell am start:*)",
+      "Bash(adb shell:*)",
+      "Bash(adb logcat:*)",
+      "Bash(Select-Object -Last 100)",
+      "Bash(adb install:*)",
+      "Bash(Select-Object -Last 50)"
     ],
     "deny": [],
     "ask": []
