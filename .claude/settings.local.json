@@ -55,7 +55,11 @@
       "Bash(adb logcat:*)",
       "Bash(Select-Object -Last 100)",
       "Bash(adb install:*)",
-      "Bash(Select-Object -Last 50)"
+      "Bash(Select-Object -Last 50)",
+      "Bash(Select-String -Pattern \"AndroidRuntime|FATAL|ERROR|medicinealarm\" -CaseSensitive:$false)",
+      "Bash(\"C:\\Users\\sanik\\Documents\\react-native\\MedicineAlarm\\android\\gradlew.bat\" -p \"C:\\Users\\sanik\\Documents\\react-native\\MedicineAlarm\\android\" clean assembleDebug)",
+      "Bash(\"C:\\Users\\sanik\\Documents\\react-native\\MedicineAlarm\\android\\gradlew.bat\" -p \"C:\\Users\\sanik\\Documents\\react-native\\MedicineAlarm\\android\" assembleDebug --no-daemon)",
+      "Bash(ping:*)"
     ],
     "deny": [],
     "ask": []
